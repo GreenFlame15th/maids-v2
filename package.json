@@ -1,0 +1,21 @@
+{
+  "name": "discord-maids",
+  "version": "2.0.0",
+  "description": "Bot to handle everything my servers",
+  "main": "node index.js",
+  "scripts": {
+    "start": "node run.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.2",
+    "express": "^4.17.1",
+    "humanize-duration": "^3.26.0",
+    "unb-api": "^1.2.3",
+    "dotenv": "^9.0.2"
+  },
+  "engines": {
+    "node": "14.5.0"
+  },
+  "author": "GreenFlame",
+  "license": "ISC"
+}
