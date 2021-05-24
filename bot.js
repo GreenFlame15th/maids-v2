@@ -21,6 +21,7 @@ class bot{
       login(client, config.name, config.prefix, token, config)
       //message handler
       client.on("ready", () => {
+        console.log("Logged in as: "+ client.user.tag)
         //get guild set up
         function getMainGuil(){
           const guilds = client.guilds.cache
