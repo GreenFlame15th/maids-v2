@@ -7,7 +7,7 @@
     "start": "node run.js"
   },
   "dependencies": {
-    "discord.js": "^12.5.2",
+    "discord.js": "12.5.2",
     "express": "^4.17.1",
     "humanize-duration": "^3.26.0",
     "unb-api": "^1.2.3",

@@ -15,6 +15,7 @@ class bot{
       const roles = JSON.parse(fs.readFileSync(dir + "/roles.json"))
       const welcomes = JSON.parse(fs.readFileSync(dir + "/welcomes.json"))
       const fusionRoles = JSON.parse(fs.readFileSync(dir + "/fusionRoles.json"))
+
       const client = new Discord.Client();
       //boot up
       console.log('Booting up ' + config.name)
@@ -22,15 +23,8 @@ class bot{
       //message handler
       client.on("ready", () => {
         console.log("Logged in as: "+ client.user.tag)
-        //get guild set up
-        function getMainGuil(){
-          const guilds = client.guilds.cache
-          if (config.mainGuild === "") return guilds.first()
-          if (guilds.array().includes(config.mainGuild)) return guilds.get(config.mainGuild)
-          return guilds.first()
-        }
-        const guild = getMainGuil()
         //get channales
+        const guild = client.guilds.cache.get(config.mainGuild)
         const log = guild.channels.cache.get(channals.log)
         const test = guild.channels.cache.get(channals.test)
         const general = guild.channels.cache.get(channals.general)

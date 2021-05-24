@@ -28,15 +28,6 @@ function welcome(message, channales, roles, config, welcomes, general) {
         message.mentions.members.array().forEach(m =>{
             apply.filter(r => r !== "").map(r => guildRoles.get(r)).forEach(r =>{
                 m.roles.add(r, "Welcomed by " + message.member.name + "(" + message.member.id + ")")
-                    .then(message =>
-                        console.log(
-                            "Roles added (" + r.name + ") to " +
-                            m.user.tag +
-                            " code (" +
-                            message +
-                            ")"
-                        )
-                    )
                     .catch(err => {
                         console.log("Error (while adding "+ r.name +"): " + err)
                         message.channel.send("Error (while adding "+ r.name +"): " + err)

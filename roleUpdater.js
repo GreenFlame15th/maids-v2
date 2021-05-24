@@ -1,10 +1,14 @@
 function login(user, fusionRoles, roles, log) {
 
+    console.log("updating roles of " +user.user.tag)
+
     if(user.user.bot) {return}
     if(!user.roles.cache.map(r=>r.id).includes(roles.verify)){return;}
 
-    const userRoleIds = user.roles.cache.array().map(r => r.id)
+    const userRoles = user.roles.cache
+    const userRoleIds = userRoles.array().map(r => r.id)
     const guildRoles = user.guild.roles.cache
+
 
     let nsfw = false
     fusionRoles.nsfw
@@ -15,15 +19,15 @@ function login(user, fusionRoles, roles, log) {
         })
     function addById(id){
         if(!userRoleIds.includes(id) && id.length === 18)
-        user.roles.add(guildRoles.get(id))
-            .then(log.send("Added **"+guildRoles.get(id).name+"** to <@" +user.id+ ">"))
-            .catch(err => console.log("RoleUpdater, adding "+id+" to "+user.nickname+": " + err))
+            user.roles.add(guildRoles.get(id))
+                .then(log.send("Added **"+guildRoles.get(id).name+"** to <@" +user.id+ ">"))
+                .catch(err => console.log("RoleUpdater, adding "+id+" to "+user.nickname+": " + err))
     }
     function removeById(id){
         if(userRoleIds.includes(id) && id.length === 18)
-        user.roles.remove(guildRoles.get(id))
-            .then(log.send("Removed **"+guildRoles.get(id).name+"** from <@" +user.id+ ">"))
-            .catch(err => console.log("RoleUpdater, removing "+id+" from "+user.nickname+": " + err))
+            user.roles.remove(guildRoles.get(id))
+                .then(log.send("Removed **"+guildRoles.get(id).name+"** from <@" +user.id+ ">"))
+                .catch(err => console.log("RoleUpdater, removing "+id+" from "+user.nickname+": " + err))
     }
     //nsfw fusion
     if(nsfw){
