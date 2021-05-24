@@ -1,7 +1,5 @@
 function login(user, fusionRoles, roles, log) {
 
-    console.log("updating roles of " +user.user.tag)
-
     if(user.user.bot) {return}
     if(!user.roles.cache.map(r=>r.id).includes(roles.verify)){return;}
 
