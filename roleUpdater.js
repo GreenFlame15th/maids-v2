@@ -1,12 +1,6 @@
 async function login(user, fusionRoles, roles, log) {
 
-    if (user.user.bot) {
-        return
-    }
-    else if (!user.roles.cache.map(r => r.id).includes(roles.verify)) {
-        return;
-    }
-    else {
+    if (!user.user.bot && user.roles.cache.map(r => r.id).includes(roles.verify)) {
 
     const userRoles = await user.roles.cache
     const userRoleIds = await userRoles.array().map(r => r.id)

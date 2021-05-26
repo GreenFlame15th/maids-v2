@@ -1,4 +1,4 @@
-const randomeInt = require("./randomeInt.js");
+const randomInt = require("./randomInt.js");
 
 function welcome(message, channales, roles, config, welcomes, general) {
 
@@ -34,7 +34,7 @@ function welcome(message, channales, roles, config, welcomes, general) {
                     })
                 })
                 general.send(
-                    welcomes[randomeInt(0,welcomes.length)]
+                    welcomes[randomInt(0,welcomes.length)]
                     .replace('<@>',"<@"+m.id+">")
                     .replace("<#>","<#"+channales.selfRole+">")
                 )
