@@ -1,4 +1,4 @@
-const randomInt = require("./randomInt.js");
+const randomInt = require("./randomeInt.js");
 
 function welcome(message, channales, roles, config, welcomes, general) {
 
