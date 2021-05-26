@@ -4,13 +4,18 @@ const app = express();
 require('dotenv').config('/.env')
 const tokenGreen = process.env.TOKENG
 const tokenBlue = process.env.TOKENB
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, function(err) {
+const port = process.env.PORT || 8000;
+app.listen(port, function(err) {
     if (err) {
         console.log("app.listen error: " + err);
         return;
     }
-    console.log('listening on port 8000');
+    console.log('listening on port ' + port);
+});
+//ping handler
+app.get("/", (request, response) => {
+    console.log("Ping received!");
+    response.sendStatus(200);
 });
 
 console.log('Waking up the maids')
