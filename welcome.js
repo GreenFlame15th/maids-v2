@@ -33,7 +33,7 @@ function welcome(message, channales, roles, config, welcomes, general) {
                         message.channel.send("Error (while adding "+ r.name +"): " + err)
                     })
                 })
-                general.send(
+                if(!message.content.toLowerCase().includes(config.silentWelcome)) general.send(
                     welcomes[randomInt(0,welcomes.length)]
                     .replace('<@>',"<@"+m.id+">")
                     .replace("<#>","<#"+channales.selfRole+">")

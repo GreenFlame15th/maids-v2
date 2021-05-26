@@ -3,5 +3,6 @@
   "prefix": "FM",
   "welcome": "welcome",
   "above": "18+",
-  "mainGuild": "687899490182889493"
+  "mainGuild": "687899490182889493",
+  "silentWelcome": "silent"
 }
