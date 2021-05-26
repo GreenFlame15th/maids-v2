@@ -18,6 +18,14 @@ app.get("/", (request, response) => {
     response.sendStatus(200);
 });
 
+//keep the bot doing something to prevent time out
+async function pop() {
+    setTimeout(() => {
+        pop();
+        console.log("pop");
+    }, 60 * 1000);
+}
+
 console.log('Waking up the maids')
 
 new bot('./green', tokenGreen)
