@@ -41,10 +41,6 @@ class bot{
         client.on("guildMemberUpdate", (before, after) => {
           roleUpdater(after, fusionRoles, log)
         })
-        //Maid says hello
-        console.log(config.name + ' is fully deployed to ' + guild.name + '.')
-        test.send(config.name + ' reporting for duty.')
-        guild.members.cache.forEach(m=> roleUpdater(m, fusionRoles, roles, log))
       })
     }
   }
